@@ -1,0 +1,63 @@
+#blockup{
+  width: 100%;
+  height: 60px;
+  background-color:'#000000';
+  text-align: left;
+  float: left;
+
+}
+
+mat-card {
+  max-width: 50% ;
+  margin: auto auto;
+}
+#blockleft{
+  width: 30%;
+  height: 700px;
+  background-color: rgb(27, 218, 43);
+  text-align: left;
+  float: left;
+}
+#block{
+  width: 40%;
+  height: 700px;
+  background-color: rgb(122, 118, 122);
+  text-align:left;
+  float: center;
+}
+#blockInleft{
+  width: 60%;
+  height: 700px;
+  background-color: rgb(27, 142, 218);
+  text-align: center;
+  float: center;
+}
+.example-form {
+  margin: auto;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  color: rgb(10, 3, 3);
+
+}
+main {
+  width: 100%;
+  height: 790px;
+  background-image: url(src/pic/90146.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.center{
+  margin-left:29%;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  color: rgb(10, 3, 3);
+}
+
+.example-full-width {
+  width: 100%;
+  color: black;
+
+}

@@ -1,0 +1,46 @@
+
+  <main>
+    <mat-toolbar [style.backgroundColor]="'#353535'">
+    <label class="headtxt">ระบบจัดการสินค้า</label>
+  </mat-toolbar>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="product">
+            <th mat-header-cell *matHeaderCellDef><p style="text-align: center;"> รูปภาพ </p></th>
+            <td mat-cell *matCellDef="let element">
+              <img [src]="element.image" width=200px><br></td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef><p style="text-align: center"> รายการสินค้า </p></th>
+              <td mat-cell *matCellDef="let element"><p style="text-align: center">ชื่อสินค้า : &nbsp; {{element.name}}<br>รหัสสินค้า : &nbsp; {{element.code}}<br>ประเภทสินค้า : &nbsp; {{element.type.types}}</p></td>
+            </ng-container>
+
+
+          <ng-container matColumnDef="detail">
+          <th mat-header-cell *matHeaderCellDef ><p style="text-align: center"> รายละเอียด </p></th>
+            <td mat-cell *matCellDef="let element"><p style="text-align: center"> {{element.detail}}</p> </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="edit">
+              <th mat-header-cell *matHeaderCellDef><p style="text-align: center">แก้ไข</p></th>
+              <td mat-cell *matCellDef="let element" justify="center" (click)="Edit(element.productsID)">
+                <button mat-button style="width: 20%; background-color: rgb(245, 170, 49)" >แก้ไข</button>
+              </td>
+            </ng-container>
+
+
+         <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef><p style="text-align: center" > ลบ </p></th>
+            <td mat-cell *matCellDef="let element" justify="center" (click)="delete(element.productsID)">
+                <button mat-button style="width: 20%; background-color: rgb(245, 170, 49)" >ลบ</button></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <form class="center">
+            <button mat-button style="width: 20%; background-color: rgb(245, 170, 49)" [routerLink]="['/add']"><b>เพิ่มสินค้า</b></button>
+        </form>
+  </main>

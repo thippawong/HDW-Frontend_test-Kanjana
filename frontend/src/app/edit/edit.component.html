@@ -1,0 +1,47 @@
+
+
+<main>
+  <mat-toolbar [style.backgroundColor]="'#353535 '">
+  <label class="headtxt">ระบบจัดการสินค้า</label>
+</mat-toolbar>
+
+    <h1 style="font-size: 30px;color: black;text-align: center;">แก้ไขข้อมูล</h1>
+    <mat-card style="background-color: #a7a7a4">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="ชื่อสินค้า" [(ngModel)]="selected.name" name="productName" [(value)]="select.name"></textarea>
+              </mat-form-field>
+            </form>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="รหัสสินค้า(P01234)" [(ngModel)]="selected.code" name="productCode" [(value)]="select.code"></textarea>
+                  </mat-form-field>
+                </form>
+
+            <form class="example-form">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>ประเภทสินค้า</mat-label>
+                <mat-select [(ngModel)] = "selected.types" name = "types" [(value)]="select.type">
+                  <mat-option *ngFor="let type of types" [value]="type.typesID">
+                      {{type.types}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="รายละเอียด" [(ngModel)] = "selected.detail" name="productDetail"  [(value)]="select.detail"></textarea>
+                </mat-form-field>
+            </form>
+            <form class="example-form">
+                    <input type="file" (change)="uploadPic($event, p)" accept=".png, .jpg, .PNG, .JPG, JPEG" />
+            </form>
+            <br><br>
+            <form class="center">
+              <button mat-button style="width: 20%; background-color: rgb(245, 170, 49)" (click)="save()"><b>บันทึก</b></button>&nbsp;&nbsp;
+              <button mat-button style="width: 20%; background-color: rgb(245, 170, 49)" [routerLink]="['/']"><b>กลับ</b></button>
+            </form>
+    </mat-card>
+</main>
