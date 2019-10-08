@@ -64,10 +64,6 @@ public class ProductController {
         String name=body.get("name").toString();
         String image=body.get("image").toString();
         String detail=body.get("detail").toString();
-        long types=Long.valueOf(body.get("types"));
-
-
-        Type t = typeRepository.findById(types);
 
         Product  product = productRepository.findById(id);
         //product.setCode(code);
@@ -82,6 +78,10 @@ public class ProductController {
         }
         
         if (!body.get("types").equals("")) {
+            long types=Long.valueOf(body.get("types"));
+
+            Type t = typeRepository.findById(types);
+
             product.setType(t);
         }
         //product.setName(name);

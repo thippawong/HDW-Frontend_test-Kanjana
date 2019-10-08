@@ -9,6 +9,7 @@ import {
 } from "angularfire2/storage";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-add',
@@ -31,7 +32,8 @@ export class AddComponent implements OnInit {
   };
   constructor(private productService: ProductService,
     private httpClient: HttpClient,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private router: Router, private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
@@ -54,6 +56,7 @@ export class AddComponent implements OnInit {
       .subscribe(data => {
         console.log("return" + data);
         alert("บันทึกข้อมูลสำเร็จ");
+        this.router.navigate(['']);
       });
   }
   uploadPic(event) {

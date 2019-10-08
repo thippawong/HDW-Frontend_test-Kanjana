@@ -73,9 +73,10 @@ export class EditComponent implements OnInit {
       .subscribe(data => {
         console.log("return" + data);
         alert("แก้ไขข้อมูลสำเร็จ");
+        this.router.navigate(['']);
       });
   }
- 
+
 
   uploadPic(event) {
     // + this.dateAsYYYYMMDDHHNNSS(new Date())
