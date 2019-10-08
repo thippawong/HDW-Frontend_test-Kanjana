@@ -6,7 +6,7 @@ mvnw spring-boot:run
 
 # Frontend Run:
 ng serve
-\
+
 # Link:
 http://localhost:4200/
 
